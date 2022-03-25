@@ -36,7 +36,7 @@ public class CalculatorController {
 
     @GetMapping("/div")
     public String div(@RequestParam double num1, @RequestParam double num2) {
-        if (num2 == 0) return "Ошибка!!!!!";
+        if (num2 == 0) return "Ошибка!!!!";
         else return calculatorService.div((double) num1, num2);
     }
 }
