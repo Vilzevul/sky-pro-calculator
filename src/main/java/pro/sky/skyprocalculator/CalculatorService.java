@@ -1,8 +1,9 @@
 package pro.sky.skyprocalculator;
 
 import org.springframework.stereotype.Service;
+
 @Service
-public class CalculatorService implements CalculatorInterface{
+public class CalculatorService implements CalculatorInterface {
 
     public String helloCalculator() {
         return "Добро пожаловать в калькулятор";

@@ -16,7 +16,7 @@ public class CalculatorController {
 
     @GetMapping
     public String helloCalculator() {
-        return (calculatorService.helloCalculator() );
+        return (calculatorService.helloCalculator());
     }
 
     @GetMapping("/plus")
@@ -26,17 +26,17 @@ public class CalculatorController {
 
     @GetMapping("/minus")
     public String minus(@RequestParam int num1, @RequestParam int num2) {
-        return calculatorService.minus(num1,num2);
+        return calculatorService.minus(num1, num2);
     }
 
     @GetMapping("/multiply")
     public String multiply(@RequestParam int num1, @RequestParam int num2) {
-        return calculatorService.multiply(num1,num2);
+        return calculatorService.multiply(num1, num2);
     }
 
     @GetMapping("/div")
     public String div(@RequestParam double num1, @RequestParam double num2) {
         if (num2 == 0) return "Ошибка!!!!!";
-        else return calculatorService.div((double) num1,num2);
+        else return calculatorService.div((double) num1, num2);
     }
 }
