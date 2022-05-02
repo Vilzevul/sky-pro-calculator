@@ -1,16 +1,13 @@
 package pro.sky.skyprocalculator;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/calculator")
-public class CalculatorController {
-    private final CalculatorInterface calculatorService;
+public class CalculatorController extends ExeptionsService{
+    private final CalculatorService calculatorService;
 
-    public CalculatorController(CalculatorInterface calculatorService) {
+    public CalculatorController(CalculatorService calculatorService) {
         this.calculatorService = calculatorService;
     }
 
@@ -35,8 +32,8 @@ public class CalculatorController {
     }
 
     @GetMapping("/div")
-    public String div(@RequestParam double num1, @RequestParam double num2) {
-        if (num2 == 0) return "Ошибка!!!!!";
-        else return calculatorService.div((double) num1, num2);
+    public String div(@RequestParam int num1, @RequestParam int num2) {
+        return calculatorService.div((int) num1, num2);
     }
+
 }
